@@ -19,19 +19,21 @@
 </head>
 <body>
     <ion-nav-view></ion-nav-view>
-    <div id="index" ng-controller="indexCtrl" ng-if="showIndex">
-        <ion-slide-box auto-play="true"
-                       slide-interval="2100" show-pager="true">
-            <ion-slide>
-                <img src="img/ionic.jpg" class="indexPic">
-            </ion-slide>
-            <ion-slide>
-                <img src="img/middle.jpg" class="indexPic">
-            </ion-slide>
-            <ion-slide>
-                <img src="img/index.gif" class="indexPic" ng-click="hideIndex();">
-            </ion-slide>
-        </ion-slide-box>
+    <div id="index" ng-controller="indexCtrl"  ng-show="showIndex">
+        <div ng-if="showIndex">
+            <ion-slide-box auto-play="true"
+                           slide-interval="2100" show-pager="true"  ng-if="showIndex">
+                <ion-slide>
+                    <img src="img/ionic.jpg" class="indexPic">
+                </ion-slide>
+                <ion-slide>
+                    <img src="img/middle.jpg" class="indexPic">
+                </ion-slide>
+                <ion-slide>
+                    <img src="img/index.gif" class="indexPic" ng-click="hideIndex();">
+                </ion-slide>
+            </ion-slide-box>
+        </div>
     </div>
 </body>
 </html>

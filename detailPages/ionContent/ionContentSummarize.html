@@ -1,0 +1,71 @@
+<ion-view view-title="ion-content综述">
+    <ion-content>
+        <div class="list card">
+            <div class="item">
+                <h2><strong>标签使用</strong></h2>
+                <xmp class="xmpCtrl">
+1）标签：<ion-content></ion-content>
+2）作用：包裹主体内容，能上下滑动显示全部内容
+                </xmp>
+            </div>
+        </div>
+        <div class="list card">
+            <div class="item item-body">
+                <h2><strong>属性</strong></h2>
+                <p>overflow-scroll 设置使用系统内置的滚动条 可用值 true | false，默认false</p>
+                <p>scroll 值为false时用于地图显示 可用值 true | false，默认true</p>
+            </div>
+        </div>
+        <div class="list card">
+            <div class="item item-body">
+                <h2><strong><xmp><ion-refresher></xmp></strong></h2>
+                <p>下拉刷新，通过下拉动作刷新数据。使用时，<strong>"ion-content"内部第一个便签</strong></p>
+                <p><strong>可用属性：</strong></p>
+                <p>● on-refresh - 当用户向下拉动足够的距离并松开时，执行此表达式</p>
+                <p>● on-pulling - 当用户开始向下拉动时，执行此表达式</p>
+                <p>● pulling-text - 当用户向下拉动时，显示此文本</p>
+                <p>● pulling-icon - 当用户向下拉动时，显示此图标</p>
+                <p>● refreshing-icon - 当用户向下拉动并松开后，显示的等待图标。ionic推荐使用spinner 代替这个属性</p>
+                <p>● disable-pulling-rotation - 禁止下拉图标旋转动画</p>
+                <p>☆ <strong>刷新完毕后，应当使用作用域的$broadcast()方法通知框架：$scope.$broadcast("scroll.refreshComplete")</strong></p>
+            </div>
+        </div>
+        <div class="list card">
+            <div class="item item-body">
+                <h2><strong><xmp><ion-infinite-scroll></xmp></strong></h2>
+                <p>通过上拉加载更多数据，当上下滑动条距离底部一定距离时执行加载，使用时，<strong>"ion-content"内部最后一个便签</strong></p>
+                <p><strong>可用属性</strong></p>
+                <p>● on-infinite - 必须。当滚动到底部时执行此表达式</p>
+                <p>● distance - 可选。距底部距离百分比。当距离底部超过此数值时，执行on-infinite。默认为1%</p>
+                <p>● icon - 可选。载入时显示的图标。默认是ion-load-d。ionic推荐使用spinner代替icon属性</p>
+                <p>● spinner - 可选。载入时的spinner。默认是ionSpinner</p>
+                <p>● immediate-check - 可选。是否在载入时立即检查滚动框范围</p>
+                <p>☆ <strong>加载完毕后，应当使用作用域的$broadcast()方法通知框架：$scope.$broadcast("scroll.infiniteScrollComplete")</strong></p>
+            </div>
+        </div>
+        <div class="list card">
+            <div class="item item-body">
+                <h2><strong>内容包含</strong></h2>
+                <p>1）正文主体，列表、表单、图片文字等</p>
+                <p>2）ion-refresher</p>
+                <p>3）ion-infinite-scroll</p>
+            </div>
+        </div>
+        <div class="list card">
+            <div class="item tabs tabs-secondary tabs-icon-left">
+                <a class="tab-item" href="#">
+                    <i class="icon ion-thumbsup"></i>
+                    Like
+                </a>
+                <a class="tab-item" href="#">
+                    <i class="icon ion-chatbox"></i>
+                    Comment
+                </a>
+                <a class="tab-item" href="#">
+                    <i class="icon ion-share"></i>
+                    Share
+                </a>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

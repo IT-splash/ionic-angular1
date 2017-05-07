@@ -1,0 +1,53 @@
+<ion-view>
+    <ion-side-menus ng-controller="downloadCtrl">
+        <ion-side-menu-content drag-content="false">
+            <ion-nav-bar class="titleCtrl" align-title="center">
+                <ion-nav-back-button class="button-clear">
+                    <i class="icon ion-ios-arrow-back"></i> 返回
+                </ion-nav-back-button>
+            </ion-nav-bar>
+            <ion-tabs class="tabs-icon-top tabs-positive">
+                <ion-tab title="常规" icon-off="ion-ios-book-outline" icon-on="ion-ios-book" href="#/main/routine">
+                    <ion-nav-view name="routineView"></ion-nav-view>
+                </ion-tab>
+                <ion-tab title="表单" icon-off="ion-ios-calculator-outline" icon-on="ion-ios-calculator" href="#/main/form">
+                    <ion-nav-view name="formView"></ion-nav-view>
+                </ion-tab>
+                <ion-tab title="列表" icon-off="ion-ios-list-outline" icon-on="ion-ios-list" href="#/main/list">
+                    <ion-nav-view name="listView"></ion-nav-view>
+                </ion-tab>
+                <ion-tab title="切换" icon-off="ion-ios-browsers-outline" icon-on="ion-ios-browsers" href="#/main/switch">
+                    <ion-nav-view name="switchView"></ion-nav-view>
+                </ion-tab>
+                <ion-tab title="组件" icon-off="ion-ios-briefcase-outline" icon-on="ion-ios-briefcase" href="#/main/component">
+                    <ion-nav-view name="componentView"></ion-nav-view>
+                </ion-tab>
+            </ion-tabs>
+            <cover-div ng-show="showCover" ng-click="hideDownloadFunc();"></cover-div>
+            <div id="downloadPngDiv" ng-show="showDownload">
+                <div id="setBorder">
+                    <img id="downloadPng" src="" />
+                </div>
+            </div>
+        </ion-side-menu-content>
+        <ion-side-menu side="left" width="150" id="sideMenuBgLeft" menu-close="">
+            <div class="marginTo50px">
+                <ion-list>
+                    <a class="item item-icon-left" ng-click="showDownloadFunc();">
+                        <i class="icon ion-qr-scanner"></i>
+                        客户端下载
+                    </a>
+                    <a class="item item-icon-left">
+                        <i class="icon ion-gear-b"></i>
+                        背景设置
+                    </a>
+                    <a class="item item-icon-left" ng-click="quitApp()">
+                        <i class="icon ion-android-cancel"></i>
+                        退出
+                    </a>
+                </ion-list>
+            </div>
+        </ion-side-menu>
+        <ion-side-menu side="right" width="150" id="sideMenuBgRight"></ion-side-menu>
+    </ion-side-menus>
+</ion-view>

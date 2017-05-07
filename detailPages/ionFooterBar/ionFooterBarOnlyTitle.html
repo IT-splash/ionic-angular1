@@ -1,0 +1,19 @@
+<ion-view view-title="标题式">
+    <ion-content>
+        <h4 class=" marginLeft10px">☆ 选择底部背景颜色：{{choice}}</h4>
+        <input type="color" class="marginLeft10px marginBottom10px"/>
+        <ion-toggle toggle-class="toggle-positive" ng-model="watchCode">查看代码</ion-toggle>
+        <ion-scroll ng-if="watchCode" direction="xy" class="scrollCtrl">
+            <xmp class="xmpCtrl">
+<ion-footer-bar class="bar-balanced" align-title="center">
+    <h1 class="title">title</h1>
+</ion-footer-bar>
+            </xmp>
+        </ion-scroll>
+
+    </ion-content>
+    <ion-footer-bar class="bar-dark"
+       align-title="center">
+        <h1 class="title">title</h1>
+    </ion-footer-bar>
+</ion-view>

@@ -1,0 +1,16 @@
+<ion-view view-title="ion-scroll">
+    <ion-scroll class="has-header ionScrollCtrl" zooming="true" direction="xy">
+        <div id="picture" ></div>
+    </ion-scroll>
+    <div class="floatDiv" >
+        <ion-toggle toggle-class="toggle-positive" ng-model="watchCode">查看代码</ion-toggle>
+        <ion-scroll ng-if="watchCode" direction="xy" class="scrollCtrl">
+            <xmp class="xmpCtrl">
+<ion-scroll class="has-header ionScrollCtrl"
+            zooming="true" direction="xy">
+     <div id="pictureCtrl" ></div>
+</ion-scroll>
+            </xmp>
+        </ion-scroll>
+    </div>
+</ion-view>

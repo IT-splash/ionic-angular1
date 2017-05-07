@@ -1,0 +1,35 @@
+<ion-view view-title="百度地图">
+    <ion-nav-buttons side="right">
+        <button class="button button-clear" ng-click="showMap();">显示地图</button>
+    </ion-nav-buttons>
+    <ion-content scroll="false">
+        <div id="mapShow"></div>
+    </ion-content>
+    <div class="floatDiv" >
+        <ion-toggle toggle-class="toggle-positive" ng-model="watchCode">查看代码</ion-toggle>
+        <ion-scroll ng-if="watchCode" direction="xy" class="scrollCtrl">
+            <xmp class="xmpCtrl">
+HTML:
+  <ion-content scroll="false">
+    <div id="mapView"></div>
+  </ion-content>
+JS:
+  //引入百度地图Api
+  <script type="text/javascript"
+          src="http://api.map.baidu.com/
+          apiv=2.0&ak=0KzDtnrAVfdyBds7BV55rfzZ">
+  </script>
+  // 创建Map实例
+  var map = new BMap.Map("mapShow");
+  // 初始化地图,设置中心点坐标和地图级别
+  map.centerAndZoom(new BMap.Point(116.404, 39.915), 11);
+  //添加地图类型控件
+  map.addControl(new BMap.MapTypeControl());
+  // 设置地图显示的城市 此项是必须设置的
+  map.setCurrentCity("北京");
+  //开启鼠标滚轮缩放
+  map.enableScrollWheelZoom(true);
+            </xmp>
+        </ion-scroll>
+    </div>
+</ion-view>

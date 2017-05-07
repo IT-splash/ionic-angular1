@@ -1,0 +1,111 @@
+<ion-view view-title="按钮">
+    <ion-content>
+        <div class="modalCtrl">
+            <h4><strong>框架自带颜色、大小、样式控制</strong></h4>
+            <div class="marginLeft10px padding-bottom">
+                <p><strong>通过在class属性中添加内置类名生成不同样式按钮</strong></p>
+                <p>●a或button标签 添加 "button" 类生成按钮基本样式</p>
+                <p>●颜色控制：添加 button-positive、button-dark等类</p>
+                <div class="padding margin-left">
+                    <button class="button button-positive button-small">positive</button>
+                    <button class="button button-assertive button-small">assertive</button>
+                    <button class="button button-balanced button-small">balanced</button>
+                    <button class="button button-energized button-small">energized</button>
+                </div>
+                <div class="padding margin-left">
+                    <button class="button button-dark button-small">dark</button>
+                    <button class="button button-royal button-small">royal</button>
+                    <button class="button button-stable button-small">stable</button>
+                    <button class="button button-light button-small">light</button>
+                    <button class="button button-calm button-small">calm</button>
+                </div>
+                <p class="marginTo10px">●大小：button-small、默认、button-large</p>
+                <span class="padding margin-left">
+                    <button class="button button-royal button-small"></button>
+                    <button class="button button-royal"></button>
+                    <button class="button button-royal button-large"></button>
+                </span>
+                <p class="marginTo10px">●样式：button-block、button-full、button-outline button-clear</p>
+                <ion-list>
+                    <ion-item class="noPadding"><button class="button button-block button-balanced">button-block</button></ion-item>
+                    <ion-item class="noPadding"><button class="button button-full button-balanced">button-ful</button></ion-item>
+                    <ion-item class="noPadding">
+                        <button class="button button-outline button-balanced">button-outline</button>
+                        <button class="button button-clear button-balanced">button-clear</button>
+                    </ion-item>
+                </ion-list>
+            </div>
+        </div>
+
+        <div class="modalCtrl">
+            <h4><strong>图标按钮</strong></h4>
+            <div class="marginLeft10px padding-bottom">
+                <ion-list>
+                    <ion-item>
+                        <button class="button icon-left ion-chevron-left button-dark">返回</button>
+                        <button class="button icon-left ion-home">主页</button>
+                        <button class="button icon-right ion-chevron-right button-dark">更多</button>
+                        <button class="button button-clear button-icon icon ion-gear-a"></button>
+                        <button class="button button-clear button-positive button-icon icon ion-search"></button>
+                    </ion-item>
+                </ion-list>
+            </div>
+            <ion-toggle toggle-class="toggle-positive" ng-model="watchCode.buttonIcon" class="noBorder">查看代码</ion-toggle>
+            <ion-scroll ng-if="watchCode.buttonIcon" direction="xy" class="scrollCtrl">
+                <xmp class="xmpCtrl">
+<button class="button icon-left
+  ion-chevron-left button-dark">
+    返回
+</button>
+<button class="button icon-left
+  ion-home">
+    主页
+</button>
+<button class="button icon-right
+  ion-chevron-right button-dark">
+    更多
+</button>
+<button class="button button-clear
+  button-icon icon ion-gear-a">
+</button>
+                </xmp>
+            </ion-scroll>
+        </div>
+
+        <div class="modalCtrl">
+            <h4><strong>按钮组</strong></h4>
+            <div class="marginLeft10px padding-bottom">
+                <div class="button-bar royal-bg">
+                    <button class="button button-clear icon ion-ios-loop"></button>
+                    <button class="button button-clear icon ion-ios-skipbackward"></button>
+                    <button class="button button-clear icon ion-ios-skipforward"></button>
+                    <button class="button button-clear icon ion-ios-pause"></button>
+                    <button class="button button-clear icon ion-ios-volume-high"></button>
+                </div>
+            </div>
+            <ion-toggle toggle-class="toggle-positive" ng-model="watchCode.buttonBar" class="noBorder">查看代码</ion-toggle>
+            <ion-scroll ng-if="watchCode.buttonBar" direction="xy" class="scrollCtrl">
+                <xmp class="xmpCtrl">
+<div class="button-bar royal-bg">
+  <button class="button button-clear
+    icon ion-ios-loop">
+  </button>
+  <button class="button button-clear
+    icon ion-ios-skipbackward">
+  </button>
+  <button class="button button-clear
+    icon ion-ios-skipforward">
+  </button>
+  <button class="button button-clear
+    icon ion-ios-pause">
+  </button>
+  <button class="button button-clear
+    icon ion-ios-volume-high">
+  </button>
+</div>
+                </xmp>
+            </ion-scroll>
+        </div>
+    </ion-content>
+
+</ion-view>

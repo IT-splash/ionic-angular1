@@ -1,0 +1,37 @@
+<ion-view view-title="标题图标按钮式">
+    <ion-content>
+        <div class="marginTo35px">
+            <ion-header-bar class="bar-calm" align-title="center">
+                <button class="button button-icon icon {{iconSelected}} {{buttonPosition}}"></button>
+                <h1 class="title">title</h1>
+            </ion-header-bar>
+        </div>
+        <br><br><br><br>
+        <h4 class="marginLeft10px">☆ 选择按钮 图标 位置：{{iconPosition}}</h4>
+        <div class="marginLeft10px marginBottom10px">
+            <span class="marginRight20px"><i class="icon ion-navicon iconCtrl"></i></span>
+            <input type="radio" name="icon" ng-model="iconSelected" ng-value="'ion-navicon'"/>
+            <span class="marginRight20px"><i class="icon ion-navicon-round iconCtrl"></i></span>
+            <input type="radio" name="icon" ng-model="iconSelected" ng-value="'ion-navicon-round'"/>
+            <span class="marginRight20px"><i class="icon ion-chevron-left iconCtrl"></i></span>
+            <input type="radio" name="icon" ng-model="iconSelected" ng-value="'ion-chevron-left'"/>
+            <span class="marginRight20px"><i class="icon ion-wrench iconCtrl"></i></span>
+            <input type="radio" name="icon" ng-model="iconSelected" ng-value="'ion-wrench'"/>
+            <span class="marginRight20px"><i class="icon ion-android-settings iconCtrl"></i></span>
+            <input type="radio" name="icon" ng-model="iconSelected" ng-value="'ion-android-settings'"/>
+        </div>
+        <ion-radio ng-model="buttonPosition" ng-value="'pull-left'">图标居左</ion-radio>
+        <ion-radio ng-model="buttonPosition" ng-value="'pull-right'">图标居右</ion-radio>
+        <ion-toggle toggle-class="toggle-positive" ng-model="watchCode">查看代码</ion-toggle>
+        <ion-scroll ng-if="watchCode" direction="xy" class="scrollCtrl">
+            <xmp class="xmpCtrl">
+<ion-header-bar class="bar-balanced"
+  align-title="center">
+    <button class="button button-icon icon
+    ion-navicon pull-right"></button>
+    <h1 class="title">title</h1>
+</ion-header-bar>
+            </xmp>
+        </ion-scroll>
+    </ion-content>
+</ion-view>

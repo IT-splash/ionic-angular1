@@ -1,0 +1,160 @@
+<ion-view view-title="输入框">
+    <ion-content>
+        <div class="modalCtrl">
+            <h4><strong>icon input</strong></h4>
+            <div class="list">
+                <label class="item item-input">
+                    <i class="icon ion-search"></i>
+                    <input type="text" placeholder="输入要搜索的内容">
+                </label>
+            </div>
+            <ion-toggle toggle-class="toggle-positive" ng-model="watchCode.icon" class="noBorder">查看代码</ion-toggle>
+            <ion-scroll ng-if="watchCode.icon" direction="xy" class="scrollCtrl">
+                <xmp class="xmpCtrl">
+<label class="item item-input">
+    <i class="icon ion-search"></i>
+    <input type="text" placeholder="输入要搜索的内容"/>
+</label>
+                </xmp>
+            </ion-scroll>
+        </div>
+
+        <div class="modalCtrl">
+            <h4><strong>input inset</strong></h4>
+            <div class="list">
+                <div class="item item-input-inset">
+                    <label class="item-input-wrapper">
+                        <input type="text" placeholder="验证码">
+                    </label>
+                    <button class="button button-small button-clear">
+                        Submit
+                    </button>
+                </div>
+            </div>
+            <ion-toggle toggle-class="toggle-positive" ng-model="watchCode.inset" class="noBorder">查看代码</ion-toggle>
+            <ion-scroll ng-if="watchCode.inset" direction="xy" class="scrollCtrl">
+                <xmp class="xmpCtrl">
+<label class="item item-input-inset">
+    <label class="input-label-wrapper">
+        <input type="text" placeholder="验证码"/>
+    </label>
+    <button class="button button-small button-clear">Submit</button>
+</label>
+                </xmp>
+            </ion-scroll>
+        </div>
+
+        <div class="modalCtrl">
+            <h4><strong>placeholder属性</strong></h4>
+            <div class="list">
+                <form name="form" novalidate="novalidate">
+                    <label class="item item-input">
+                        <input type="email" placeholder="输入邮箱"/>
+                    </label>
+                    <label class="item item-input">
+                        <input type="password" placeholder="密码"/>
+                    </label>
+                    <ion-item>
+                        <button class="button button-block button-positive"
+                                ng-click="">提交</button>
+                    </ion-item>
+                </form>
+            </div>
+            <ion-toggle toggle-class="toggle-positive" ng-model="watchCode.placeholder" class="noBorder">查看代码</ion-toggle>
+            <ion-scroll ng-if="watchCode.placeholder" direction="xy" class="scrollCtrl">
+                <xmp class="xmpCtrl">
+<label class="item item-input">
+    <input type="email" placeholder="输入邮箱"/>
+</label>
+                </xmp>
+            </ion-scroll>
+        </div>
+
+        <div class="modalCtrl">
+            <h4><strong>inline Label</strong></h4>
+            <div class="list">
+                <form name="form" novalidate="novalidate">
+                    <label class="item item-input">
+                        <span class="input-label">邮箱</span>
+                        <input type="email"/>
+                    </label>
+                    <label class="item item-input">
+                        <span class="input-label">密码</span>
+                        <input type="password"/>
+                    </label>
+                    <ion-item>
+                        <button class="button button-block button-positive"
+                                ng-click="">提交</button>
+                    </ion-item>
+                </form>
+            </div>
+            <ion-toggle toggle-class="toggle-positive" ng-model="watchCode.inline" class="noBorder">查看代码</ion-toggle>
+            <ion-scroll ng-if="watchCode.inline" direction="xy" class="scrollCtrl">
+                <xmp class="xmpCtrl">
+<label class="item item-input">
+    <span class="input-label">邮箱</span>
+    <input type="email"/>
+</label>
+                </xmp>
+            </ion-scroll>
+        </div>
+
+        <div class="modalCtrl">
+            <h4><strong>stacked Label</strong></h4>
+            <div class="list">
+                <form name="form" novalidate="novalidate">
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label">邮箱</span>
+                        <input type="email" placeholder="you365xpf@163.com"/>
+                    </label>
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label">密码</span>
+                        <input type="password" placeholder="......"/>
+                    </label>
+                    <ion-item>
+                        <button class="button button-block button-positive"
+                                ng-click="">提交</button>
+                    </ion-item>
+                </form>
+            </div>
+            <ion-toggle toggle-class="toggle-positive" ng-model="watchCode.stacked" class="noBorder">查看代码</ion-toggle>
+            <ion-scroll ng-if="watchCode.stacked" direction="xy" class="scrollCtrl">
+                <xmp class="xmpCtrl">
+<label class="item item-input item-stacked-label">
+    <span class="input-label">邮箱</span>
+    <input type="email" placeholder="输入邮箱"/>
+</label>
+                </xmp>
+            </ion-scroll>
+        </div>
+
+        <div class="modalCtrl">
+            <h4><strong>floating Label</strong></h4>
+            <div class="list">
+                <form name="form" novalidate="novalidate">
+                    <label class="item item-input item-floating-label">
+                        <span class="input-label">邮箱</span>
+                        <input type="email" placeholder="you365xpf@163.com"/>
+                    </label>
+                    <label class="item item-input item-floating-label">
+                        <span class="input-label">密码</span>
+                        <input type="password" placeholder="......"/>
+                    </label>
+                    <ion-item>
+                        <button class="button button-block button-positive"
+                                ng-click="">提交</button>
+                    </ion-item>
+                </form>
+            </div>
+            <ion-toggle toggle-class="toggle-positive" ng-model="watchCode.floating" class="noBorder">查看代码</ion-toggle>
+            <ion-scroll ng-if="watchCode.floating" direction="xy" class="scrollCtrl">
+                <xmp class="xmpCtrl">
+<label class="item item-input item-floating-label">
+    <span class="input-label">密码</span>
+    <input type="email" placeholder="输入密码"/>
+</label>
+                </xmp>
+            </ion-scroll>
+        </div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,38 @@
+<ion-view view-title="图标输入框按钮式">
+    <ion-content>
+        <div class="marginTo35px">
+            <ion-header-bar class="bar-royal">
+                <label class="item-input-inset"  style="width: 95%;">
+                    <label class="item-input-wrapper">
+                        <i class="icon ion-search"></i>
+                        <input type="text" ng-model="dataName" ng-keyup="goSearchBaiDuDelay(dataName)" placeholder="输入搜索内容..."/>
+                    </label>
+                </label>
+                <button class="button button-clear" ng-click="goSearchBaiDu(dataName);">Go</button>
+            </ion-header-bar>
+        </div>
+        <br><br><br><br>
+        <div class="marginLeft20px">
+            <ul>
+                <li ng-repeat="data in baiduData" class="marginTo10px"><a>{{data}}</a></li>
+            </ul>
+
+            </ul>
+        </div>
+        <ion-toggle toggle-class="toggle-positive" ng-model="watchCode" class="marginTo50px">查看代码</ion-toggle>
+        <ion-scroll ng-if="watchCode" direction="xy" class="scrollCtrl">
+            <xmp class="xmpCtrl">
+<ion-header-bar class="bar-royal">
+  <label class="item-input-inset"  style="width: 95%;">
+     <label class="item-input-wrapper">
+        <i class="icon ion-search"></i>
+        <input type="text"
+           placeholder="输入搜索内容..."/>
+        </label>
+    </label>
+    <button class="button button-clear">Go</button>
+</ion-header-bar>
+            </xmp>
+        </ion-scroll>
+    </ion-content>
+</ion-view>

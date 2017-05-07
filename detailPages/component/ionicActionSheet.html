@@ -1,0 +1,44 @@
+<ion-view view-title="$ionicActionSheet">
+    <ion-content>
+        <div id="ionicActionSheet" class="modalCtrl marginBottom400px">
+            <h4><strong>上拉菜单</strong>$ionicActionSheet</h4>
+            <button class="button button-icon button-small ion-arrow-down-b showComponent"
+                    ng-click="showIonicActionSheet();"></button>
+            <div class="marginLeft10px marginTop">
+                <p><strong>上拉菜单是自屏幕底部向上滑出的菜单</strong></p>
+                <p><strong>使用一个JSON对象定义上拉菜单选项</strong></p>
+                <div class="marginLeft20px">
+                    <p>1）<strong>titleText</strong> 设置标题</p>
+                    <p>2）<strong>buttons</strong> 自定义按钮组</p>
+                    <p>3）<strong>cancelText</strong> 取消按钮描述</p>
+                    <p>4）<strong>destructiveText</strong> 危险按钮描述，字体默认为红色</p>
+                </div>
+                <p><strong>选项点击事件</strong></p>
+                <div class="marginLeft20px">
+                    <p>1）<strong>buttonClicked</strong> 按钮点击事件</p>
+                    <p>2）<strong>cancel</strong> 取消按钮点击回调</p>
+                    <p>3）<strong>destructiveButtonClicked</strong> 危险按钮点击回调</p>
+                    <p>4）<strong>cancelOnStateChange</strong> 切换视图是是否关闭菜单，值为 true | false，默认true</p>
+                </div>
+            </div>
+            <ion-toggle toggle-class="toggle-positive" ng-model="watchCode.ionicActionSheet" class="noBorder">查看代码</ion-toggle>
+            <ion-scroll ng-if="watchCode.ionicActionSheet" direction="xy" class="scrollCtrl">
+                <xmp class="xmpCtrl">
+JS:
+    $ionicActionSheet.show({
+        titleText: "$ionicActionSheet",
+        buttons: {text: "button"},
+        cancelText: "取消",
+        buttonClicked: function(index){
+            alert(this.buttons[index]);
+        },
+        cancel: function(){
+            ...
+        }
+    })
+                </xmp>
+            </ion-scroll>
+        </div>
+
+    </ion-content>
+</ion-view>

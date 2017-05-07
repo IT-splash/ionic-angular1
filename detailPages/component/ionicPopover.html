@@ -1,0 +1,40 @@
+<ion-view view-title="$ionicPopover">
+    <ion-content>
+        <div id="ionicPopover" class="modalCtrl marginBottom400px">
+            <h4><strong>浮动框</strong>$ionicPopover</h4>
+            <button class="button button-small button-clear positive showComponent1"
+                    ng-click="showIonicPopover($event);">关于</button>
+            <div class="marginLeft10px marginTop">
+                <p><strong>以非侵入的方式提供当前视图的额外信息</strong></p>
+                <p><strong>实现方式与 模态框相同</strong></p>
+                <div class="marginLeft20px">
+                    <p>1）<strong>声明对话框模板</strong> 使用ion-popover-view指令声明对话框模板</p>
+                    <p>2）<strong>使用$ionicPopover服务创建模板对象</strong></p>
+                    <p>3）<strong>使用创建的模板对象</strong></p>
+                </div>
+            </div>
+            <ion-toggle toggle-class="toggle-positive" ng-model="watchCode.ionicPopover" class="noBorder">查看代码</ion-toggle>
+            <ion-scroll ng-if="watchCode.ionicPopover" direction="xy" class="scrollCtrl">
+                <xmp class="xmpCtrl">
+JS:
+  //创建ionicPopover对象
+  $ionicPopover.fromTemplateUrl("ionicPopover.html",{
+     scope: $scope
+  }).then(function(popover){
+     $scope.popover = popover;
+  });
+  //显示
+  $scope.showIonicPopover = function($event){
+     $scope.popover.show($event);
+  };
+                </xmp>
+            </ion-scroll>
+        </div>
+    </ion-content>
+    <script type="text/ng-template" id="ionicPopoverShow.html">
+        <ion-popover-view class="royal-bg light padding">
+            <p><strong>德邦物流</strong>是一 ....</p>
+            <p>此处省略5万字</p>
+        </ion-popover-view>
+    </script>
+</ion-view>

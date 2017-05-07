@@ -1,0 +1,82 @@
+<ion-view view-title="$ionicModal">
+    <ion-content>
+        <div id="ionicModal" class="modalCtrl marginBottom400px">
+            <h4><strong>模块框</strong> $ionicModal</h4>
+            <button class="button button-icon button-small ion-arrow-right-b showComponent"
+                    ng-click="showIonicModal()"></button>
+            <div class="marginLeft10px marginTop">
+                <p><strong>弹出的模态对话框关闭之前，其他的用户交互行为被阻止</strong></p>
+                <p><strong>创建模块框步骤</strong></p>
+                <div class="marginLeft20px">
+                    <p>1）<strong>声明对话框模板</strong> 使用ion-modal-view指令声明对话框模板</p>
+                    <p>2）<strong>使用$ionicModal服务创建模板对象</strong></p>
+                    <p>3）<strong>使用创建的模板对象</strong></p>
+                </div>
+                <ion-list ng-show="inputInfo" type="card">
+                    <ion-item class="item-divider item-icon-right">
+                        你输入的信息为：
+                        <i class="icon ion-ios-close-empty" ng-click="closeInputInfo()"></i>
+                    </ion-item>
+                    <label class="item item-input">
+                        <span class="input-label">昵称</span>
+                        <input type="text" ng-model="User.name"/>
+                    </label>
+                    <label class="item item-input">
+                        <span class="input-label">邮箱</span>
+                        <input type="text" ng-model="User.email"/>
+                    </label>
+                </ion-list>
+            </div>
+            <ion-toggle toggle-class="toggle-positive" ng-model="watchCode.ionicModal" class="noBorder">查看代码</ion-toggle>
+            <ion-scroll ng-if="watchCode.ionicModal" direction="xy" class="scrollCtrl">
+                <xmp class="xmpCtrl">
+JS：
+    $ionicModal.fromTemplateUrl("ionicModal.html", {
+        scope: $scope,
+        animation: "slide-in-up"
+    }).then(function(modal){
+        $scope.modal = modal;
+    });
+    $scope.showIonicModal = function(){
+        $scope.modal.show();
+    };
+    $scope.hideIonicModal = function(){
+        $scope.modal.hide();
+    };
+                </xmp>
+            </ion-scroll>
+        </div>
+    </ion-content>
+    <script type="text/ng-template" id="ionicModalShow.html">
+        <ion-modal-view>
+            <ion-header-bar class=bar-dark pull-right">
+            <h1 class="title">$ionicModal</h1>
+            <a class="button button-clear" ng-click="hideIonicModal();">close</a>
+            </ion-header-bar>
+            <ion-content>
+                <div class="padding">
+                    <div class="list card">
+                        <ion-item class="item-divider">输入个人信息</ion-item>
+                        <label class="item item-input item-floating-label">
+                            <span class="input-label">昵称</span>
+                            <input ng-model="User.name" type="text" placeholder="昵称">
+                        </label>
+                        <label class="item item-input item-floating-label">
+                            <span class="input-label">邮箱</span>
+                            <input ng-model="User.email" type="text" placeholder="邮箱">
+                        </label>
+                        <label class="item item-input item-floating-label">
+                            <span class="input-label">密码</span>
+                            <input ng-model="User.password" type="password" placeholder="密码">
+                        </label>
+                        <label class="item item-input item-floating-label">
+                            <span class="input-label">确认密码</span>
+                            <input ng-model="User.passwordConfirm" type="password" placeholder="确认密码">
+                        </label>
+                        <button class="button button-block button-positive" ng-click="createUser();">确定</button>
+                    </div>
+                </div>
+            </ion-content>
+        </ion-modal-view>
+    </script>
+</ion-view>

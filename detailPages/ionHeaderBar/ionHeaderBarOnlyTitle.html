@@ -1,0 +1,24 @@
+<ion-view view-title="标题式 <ion-header-bar>">
+    <ion-content>
+        <div class="marginTo35px">
+            <ion-header-bar class="bar-dark" align-title="{{choice}}">
+                <h1 class="title {{choice}}">title</h1>
+            </ion-header-bar>
+        </div>
+        <br><br><br><br>
+        <h4 class=" marginLeft10px">☆ 选择头部背景颜色 位置：</h4>
+        <input type="color" class="marginLeft10px marginBottom10px"/>
+        <ion-radio ng-model="choice" ng-value="'title-left'">标题居左</ion-radio>
+        <ion-radio ng-model="choice" ng-value="'title-center'">标题居中</ion-radio>
+        <ion-radio ng-model="choice" ng-value="'title-right'">标题居右</ion-radio>
+        <ion-toggle toggle-class="toggle-positive" ng-model="watchCode">查看代码</ion-toggle>
+        <ion-scroll ng-if="watchCode" direction="xy" class="scrollCtrl">
+            <xmp class="xmpCtrl">
+<ion-header-bar class="bar-balanced"
+                align-title="center">
+    <h1 class="title">title</h1>
+</ion-header-bar>
+            </xmp>
+        </ion-scroll>
+    </ion-content>
+</ion-view>

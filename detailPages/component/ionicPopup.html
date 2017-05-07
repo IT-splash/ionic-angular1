@@ -1,0 +1,44 @@
+<ion-view view-title="$ionicPopup">
+    <ion-content>
+        <div id="ionicPopup" class="modalCtrl marginBottom400px">
+            <h4><strong>弹出框</strong>$ionicPopup</h4>
+            <div class="marginLeft10px">
+                <p><strong>弹出框通常用于提醒、警告</strong></p>
+                <ion-list type="card">
+                    <ion-item class="item-divider">点击查看效果</ion-item>
+                    <ion-item>
+                        <button class="button button-block button-positive" ng-click="showPopupConfirm()">确认</button>
+                        <button class="button button-block button-balanced" ng-click="showPopupPrompt()">提示</button>
+                        <button class="button button-block button-assertive" ng-click="showPopupWarn()">警告</button>
+                    </ion-item>
+                </ion-list>
+            </div>
+
+            <ion-toggle toggle-class="toggle-positive" ng-model="watchCode.ionicPopup" class="noBorder">查看代码</ion-toggle>
+            <ion-scroll ng-if="watchCode.ionicPopup" direction="xy" class="scrollCtrl">
+                <xmp class="xmpCtrl">
+JS：
+    //提示、确认框
+    $ionicPopup.confirm({
+      title: "确认框",
+      template: "确定要学Ionic框架吗",
+      okText: "必须的",
+      cancelText: "算了吧"
+    }).then(function(result){
+      if(result){
+        ionicLoadingShowInfo("加油哦 Ionic ！");
+      }else{
+        ionicLoadingShowInfo("学点别的也好！")
+        }
+    });
+    //警告框
+    $ionicPopup.alert({
+        title: "警告",
+        template: "越是憧憬 越要风雨兼程",
+        okText: "好"
+    })
+                </xmp>
+            </ion-scroll>
+        </div>
+    </ion-content>
+</ion-view>

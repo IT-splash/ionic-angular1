@@ -1,0 +1,35 @@
+<ion-view view-title="标题 按钮组式">
+    <ion-content>
+        <h4 class=" marginLeft10px">☆ 选择底部背景颜色：{{choice}}</h4>
+        <input type="color" class="marginLeft10px marginBottom10px"/>
+        <ion-toggle toggle-class="toggle-positive" ng-model="watchCode">查看代码</ion-toggle>
+        <ion-scroll ng-if="watchCode" direction="xy" class="scrollCtrl">
+            <xmp class="xmpCtrl">
+<ion-footer-bar class="bar-dark">
+ <div class="button-bar">
+   <a class="button button-clear
+   icon ion-ios-loop"></a>
+   <a class="button button-clear
+   icon ion-ios-skipbackward"></a>
+   <a class="button button-clear
+   icon ion-ios-skipforward"></a>
+   <a class="button button-clear
+   icon ion-ios-pause"></a>
+   <a class="button button-clear
+   icon ion-ios-volume-high"></a>
+ </div>
+</ion-footer-bar>
+            </xmp>
+        </ion-scroll>
+
+    </ion-content>
+    <ion-footer-bar class="bar-dark">
+        <div class="button-bar">
+            <a class="button button-clear icon ion-ios-loop"></a>
+            <a class="button button-clear icon ion-ios-skipbackward"></a>
+            <a class="button button-clear icon ion-ios-skipforward"></a>
+            <a class="button button-clear icon ion-ios-pause"></a>
+            <a class="button button-clear icon ion-ios-volume-high"></a>
+        </div>
+    </ion-footer-bar>
+</ion-view>

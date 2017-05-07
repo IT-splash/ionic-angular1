@@ -1,0 +1,16 @@
+<ion-view  view-title="{{entranceTitle}}">
+    <ion-content>
+        <ion-list>
+            <ion-item ng-repeat="item in items" ng-click="goToDetail(item.path);">
+                <strong ng-bind="item.name"></strong>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>
+
+
+
+
+
+
+

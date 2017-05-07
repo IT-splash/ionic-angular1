@@ -1,0 +1,29 @@
+<ion-view view-title="基本内容区">
+    <ion-content>
+        <div class="list card">
+            <div class="item item-avatar">
+                <img src="./img/china.jpg">
+                <h2><strong>江西 ● 景德镇</strong></h2>
+                <p>千年瓷都 山水江南</p>
+            </div>
+
+            <div class="item item-image">
+                <img src="./img/jdz.jpg">
+            </div>
+
+            <a class="item item-icon-left" href="http://baike.baidu.com/link?url=5ORYv-y5pGp2hPAa18d7_JFlb59PiNDKFsN-LUlb2vSOXxmqZg0TbkEDR9Jly6Hw7BuiMIuZIxhnGgLcmAOUNN3CFTUt2ERWGIelnvlaZn7">
+                <i class="icon ion-social-linkedin-outline"></i>
+                百度百科
+            </a>
+        </div>
+        <ion-toggle toggle-class="toggle-positive" ng-model="watchCode">查看代码</ion-toggle>
+        <ion-scroll ng-if="watchCode" direction="xy" class="scrollCtrl">
+            <xmp class="xmpCtrl">
+<ion-content>
+    ...
+    ...
+</ion-content>
+            </xmp>
+    </ion-content>
+
+</ion-view>

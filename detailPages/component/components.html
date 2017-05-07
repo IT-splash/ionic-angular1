@@ -1,0 +1,228 @@
+<ion-view view-title="{{componentsTitle}}">
+    <ion-content scroll="false">
+        <!--模态框-->
+        <div id="ionicModal" class="modalCtrl marginBottom400px">
+            <h4><strong>模块框</strong> $ionicModal</h4>
+            <button class="button button-icon button-small ion-arrow-right-b showComponent"
+                    ng-click="showIonicModal()"></button>
+            <div class="marginLeft10px marginTop">
+                <p><strong>弹出的模态对话框关闭之前，其他的用户交互行为被阻止</strong></p>
+                <p><strong>创建模块框步骤</strong></p>
+                <div class="marginLeft20px">
+                    <p>1）<strong>声明对话框模板</strong> 使用ion-modal-view指令声明对话框模板</p>
+                    <p>2）<strong>使用$ionicModal服务创建模板对象</strong></p>
+                    <p>3）<strong>使用创建的模板对象</strong></p>
+                </div>
+                <ion-list ng-show="inputInfo" type="card">
+                    <ion-item class="item-divider item-icon-right">
+                        你输入的信息为：
+                        <i class="icon ion-ios-close-empty" ng-click="closeInputInfo()"></i>
+                    </ion-item>
+                    <label class="item item-input">
+                        <span class="input-label">昵称</span>
+                        <input type="text" ng-model="User.name"/>
+                    </label>
+                    <label class="item item-input">
+                    <span class="input-label">邮箱</span>
+                    <input type="text" ng-model="User.email"/>
+                </label>
+                </ion-list>
+            </div>
+            <ion-toggle toggle-class="toggle-positive" ng-model="watchCode.ionicModal" class="noBorder">查看代码</ion-toggle>
+            <ion-scroll ng-if="watchCode.ionicModal" direction="xy" class="scrollCtrl">
+                <xmp class="xmpCtrl">
+JS：
+   $ionicModal.fromTemplateUrl("ionicModal.html", {
+       scope: $scope,
+       animation: "slide-in-up"
+   }).then(function(modal){
+       $scope.modal = modal;
+   });
+   $scope.showIonicModal = function(){
+       $scope.modal.show();
+   };
+   $scope.hideIonicModal = function(){
+       $scope.modal.hide();
+   };
+                </xmp>
+            </ion-scroll>
+        </div>
+
+        <!--上拉菜单-->
+        <div id="ionicActionSheet" class="modalCtrl marginBottom400px">
+            <h4><strong>上拉菜单</strong>$ionicActionSheet</h4>
+            <button class="button button-icon button-small ion-arrow-down-b showComponent"
+                    ng-click="showIonicActionSheet();"></button>
+            <div class="marginLeft10px marginTop">
+                <p><strong>上拉菜单是自屏幕底部向上滑出的菜单</strong></p>
+                <p><strong>使用一个JSON对象定义上拉菜单选项</strong></p>
+                <div class="marginLeft20px">
+                    <p>1）<strong>titleText</strong> 设置标题</p>
+                    <p>2）<strong>buttons</strong> 自定义按钮组</p>
+                    <p>3）<strong>cancelText</strong> 取消按钮描述</p>
+                    <p>4）<strong>destructiveText</strong> 危险按钮描述，字体默认为红色</p>
+                </div>
+                <p><strong>选项点击事件</strong></p>
+                <div class="marginLeft20px">
+                    <p>1）<strong>buttonClicked</strong> 按钮点击事件</p>
+                    <p>2）<strong>cancel</strong> 取消按钮点击回调</p>
+                    <p>3）<strong>destructiveButtonClicked</strong> 危险按钮点击回调</p>
+                    <p>4）<strong>cancelOnStateChange</strong> 切换视图是是否关闭菜单，值为 true | false，默认true</p>
+                </div>
+            </div>
+            <ion-toggle toggle-class="toggle-positive" ng-model="watchCode.ionicActionSheet" class="noBorder">查看代码</ion-toggle>
+            <ion-scroll ng-if="watchCode.ionicActionSheet" direction="xy" class="scrollCtrl">
+                <xmp class="xmpCtrl">
+JS:
+    $ionicActionSheet.show({
+        titleText: "$ionicActionSheet",
+        buttons: getItems(),
+        cancelText: "取消",
+        buttonClicked: function(index){
+            alert(this.buttons[index]);
+        },
+        cancel: function(){
+            ...
+        }
+    })
+                </xmp>
+            </ion-scroll>
+        </div>
+
+        <!--弹出框-->
+        <div id="ionicPopup" class="modalCtrl marginBottom400px">
+            <h4><strong>弹出框</strong>$ionicPopup</h4>
+            <div class="marginLeft10px">
+                <p><strong>弹出框通常用于提醒、警告</strong></p>
+                <ion-list type="card">
+                    <ion-item class="item-divider">点击查看效果</ion-item>
+                    <ion-item>
+                        <button class="button button-block button-positive" ng-click="showPopupConfirm()">确认</button>
+                        <button class="button button-block button-balanced" ng-click="showPopupPrompt()">提示</button>
+                        <button class="button button-block button-assertive" ng-click="showPopupWarn()">警告</button>
+                    </ion-item>
+                </ion-list>
+            </div>
+
+            <ion-toggle toggle-class="toggle-positive" ng-model="watchCode.ionicPopup" class="noBorder">查看代码</ion-toggle>
+            <ion-scroll ng-if="watchCode.ionicPopup" direction="xy" class="scrollCtrl">
+                <xmp class="xmpCtrl">
+JS：
+    //提示、确认框
+    $ionicPopup.confirm({
+        title: "确认框",
+        template: "确定要学Ionic框架吗",
+        okText: "必须的",
+        cancelText: "算了吧"
+    }).then(function(result){
+        if(result){
+            ionicLoadingShowInfo("加油哦 Ionic ！");
+        }else{
+            ionicLoadingShowInfo("学点别的也好！")
+        }
+    });
+    //警告框
+    $ionicPopup.alert({
+        title: "警告",
+        template: "越是憧憬 越要风雨兼程",
+        okText: "好"
+    })
+                </xmp>
+            </ion-scroll>
+        </div>
+
+        <div id="ionicPopover" class="modalCtrl marginBottom400px">
+            <h4><strong>浮动框</strong>$ionicPopover</h4>
+            <button class="button button-small button-clear positive showComponent1"
+                    ng-click="showIonicPopover($event);">关于</button>
+            <div class="marginLeft10px marginTop">
+                <p><strong>以非侵入的方式提供当前视图的额外信息</strong></p>
+                <p><strong>实现方式与 模态框相同</strong></p>
+                <div class="marginLeft20px">
+                    <p>1）<strong>声明对话框模板</strong> 使用ion-popover-view指令声明对话框模板</p>
+                    <p>2）<strong>使用$ionicPopover服务创建模板对象</strong></p>
+                    <p>3）<strong>使用创建的模板对象</strong></p>
+                </div>
+            </div>
+            <ion-toggle toggle-class="toggle-positive" ng-model="watchCode.ionicPopover" class="noBorder">查看代码</ion-toggle>
+            <ion-scroll ng-if="watchCode.ionicPopover" direction="xy" class="scrollCtrl">
+                <xmp class="xmpCtrl">
+JS:
+   //创建ionicPopover对象
+    $ionicPopover.fromTemplateUrl("ionicPopover.html",{
+        scope: $scope
+    }).then(function(popover){
+        $scope.popover = popover;
+    });
+    //显示
+    $scope.showIonicPopover = function($event){
+        $scope.popover.show($event);
+    };
+                </xmp>
+            </ion-scroll>
+        </div>
+
+        <div id="ionicLoading" class="modalCtrl marginBottom400px">
+            <h4><strong>加载指示</strong>$ionicLoading</h4>
+            <button class="button button-icon button-small ion-arrow-right-b showComponent"></button>
+
+            <ion-toggle toggle-class="toggle-positive" ng-model="watchCode.ionicLoading" class="noBorder">查看代码</ion-toggle>
+            <ion-scroll ng-if="watchCode.ionicLoading" direction="xy" class="scrollCtrl">
+                <xmp class="xmpCtrl">
+
+                </xmp>
+            </ion-scroll>
+        </div>
+
+        <div id="ionicBackdrop" class="modalCtrl marginBottom200px">
+            <h4><strong>背景幕</strong>$ionicBackdrop</h4>
+            <button class="button button-icon button-small ion-arrow-right-b showComponent"></button>
+
+            <ion-toggle toggle-class="toggle-positive" ng-model="watchCode.ionicBackdrop" class="noBorder">查看代码</ion-toggle>
+            <ion-scroll ng-if="watchCode.ionicBackdrop" direction="xy" class="scrollCtrl">
+                <xmp class="xmpCtrl">
+
+                </xmp>
+            </ion-scroll>
+        </div>
+    </ion-content>
+
+    <script type="text/ng-template" id="ionicModal.html">
+        <ion-modal-view>
+            <ion-header-bar class=bar-dark pull-right">
+                <h1 class="title">$ionicModal</h1>
+                <a class="button button-clear" ng-click="hideIonicModal();">close</a>
+            </ion-header-bar>
+            <ion-content>
+                <div class="padding">
+                    <div class="list card">
+                        <ion-item class="item-divider">输入个人信息</ion-item>
+                        <label class="item item-input item-floating-label">
+                            <span class="input-label">昵称</span>
+                            <input ng-model="User.name" type="text" placeholder="昵称">
+                        </label>
+                        <label class="item item-input item-floating-label">
+                            <span class="input-label">邮箱</span>
+                            <input ng-model="User.email" type="text" placeholder="邮箱">
+                        </label>
+                        <label class="item item-input item-floating-label">
+                            <span class="input-label">密码</span>
+                            <input ng-model="User.password" type="password" placeholder="密码">
+                        </label>
+                        <label class="item item-input item-floating-label">
+                            <span class="input-label">确认密码</span>
+                            <input ng-model="User.passwordConfirm" type="password" placeholder="确认密码">
+                        </label>
+                        <button class="button button-block button-positive" ng-click="createUser();">确定</button>
+                    </div>
+                </div>
+            </ion-content>
+        </ion-modal-view>
+    </script>
+    <script type="text/ng-template" id="ionicPopover.html">
+            <ion-popover-view class="royal-bg light padding">
+                <p><strong>德邦物流</strong>是一 ....</p>
+                <p>此处省略5万字</p>
+            </ion-popover-view>
+    </script>
+</ion-view>

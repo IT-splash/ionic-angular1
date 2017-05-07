@@ -1,0 +1,39 @@
+<ion-view view-title="ion-refresher">
+    <ion-content>
+        <ion-refresher pulling-text="下拉更新列表" on-pulling="startRefresh()"
+                pulling-icon="ion-happy"
+                spinner="android">
+        </ion-refresher>
+        <ul class="list">
+            <li class="item" ng-repeat="item in refreshItems" ng-bind="item"></li>
+        </ul>
+    </ion-content>
+    <div class="floatDiv" >
+        <ion-toggle toggle-class="toggle-positive" ng-model="watchCode">查看代码</ion-toggle>
+        <ion-scroll ng-if="watchCode" direction="xy" class="scrollCtrl">
+            <xmp class="xmpCtrl">
+HTML:
+  <ion-content>
+    <ion-refresher pulling-text="下拉更新列表"
+               on-pulling="startRefresh()">
+    </ion-refresher>
+    <ul class="list">
+      <li class="item"
+          ng-repeat="item in refreshItems"
+          ng-bind="item">
+      </li>
+    </ul>
+  </ion-content>
+JS:
+  $scope.refreshItems = [];
+  var flag = 1;
+  $scope.startRefresh = function(){
+    for(var i=0; i<10; ++i, ++flag){
+      $scope.contentItems.unshift(["item", flag].join(" "));
+    }
+    $scope.$broadcast("scroll.refreshComplete");
+  };
+            </xmp>
+        </ion-scroll>
+    </div>
+</ion-view>

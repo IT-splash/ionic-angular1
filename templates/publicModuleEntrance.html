@@ -1,0 +1,19 @@
+<ion-view view-title="{{moduleTitle}}">
+    <ion-nav-buttons side="left">
+        <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+    </ion-nav-buttons>
+    <ion-content>
+        <ion-list>
+            <ion-item ng-repeat="item in items" ng-click="goToDetail(item.path);">
+                <strong ng-cloak
+                        ng-class="{'fontColor1': $index%3==0, 'fontColor2': $index%3==1, 'fontColor3': $index%3==2}">
+                    ✈ {{item.name}}</strong>
+                <span class="marginLeft10px"><code ng-bind="item.detail"></code></span>
+                <ion-option-button class="icon ion-edit"></ion-option-button>
+                <ion-option-button class="icon ion-share"></ion-option-button>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>
+
+

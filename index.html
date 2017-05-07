@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="IonicDemoSet">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width initial-scale=1 maximum-scale=1 user-scalable=no">
+    <link rel="stylesheet" href="./lib/css/ionic.min.css"/>
+    <link rel="stylesheet" href="./css/style.css"/>
+    <!--<script src="cordova.js"></script>-->
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=0KzDtnrAVfdyBds7BV55rfzZ"></script>
+    <script src="./lib/js/jquery.min.js"></script>
+    <script src="./lib/js/ionic.bundle.js"></script>
+    <script src="./lib/js/angular/angular-animate.min.js"></script>
+    <script src="./lib/js/ocLazyLoad.min.js"></script>
+    <script src="./js/router.js"></script>
+    <script src="./js/detailPageControllers/gestureCtrl.js"></script>
+    <script src="./js/directives/publicDirectives.js"></script>
+    <script src="./js/detailPageControllers/componentsCtrl.js"></script>
+    <title>Ionic框架基本控件样式集</title>
+</head>
+<body>
+    <ion-nav-view></ion-nav-view>
+    <div id="index" ng-controller="indexCtrl" ng-if="showIndex">
+        <ion-slide-box auto-play="true"
+                       slide-interval="2100" show-pager="true">
+            <ion-slide>
+                <img src="img/ionic.jpg" class="indexPic">
+            </ion-slide>
+            <ion-slide>
+                <img src="img/middle.jpg" class="indexPic">
+            </ion-slide>
+            <ion-slide>
+                <img src="img/index.gif" class="indexPic" ng-click="hideIndex();">
+            </ion-slide>
+        </ion-slide-box>
+    </div>
+</body>
+</html>

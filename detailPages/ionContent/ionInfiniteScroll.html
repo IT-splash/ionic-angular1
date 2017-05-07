@@ -1,0 +1,46 @@
+<ion-view view-title="ion-infinite-scroll">
+    <ion-content>
+        <ul class="list">
+            <li class="item" ng-repeat="item in infiniteItems" ng-bind="item"></li>
+        </ul>
+        <ion-infinite-scroll
+                on-infinite="loadMore();"
+                spinner="android"
+                immediate-check="true"
+                distance="5%">
+        </ion-infinite-scroll>
+    </ion-content>
+    <div class="floatDiv" >
+        <ion-toggle toggle-class="toggle-positive" ng-model="watchCode">查看代码</ion-toggle>
+        <ion-scroll ng-if="watchCode" direction="xy" class="scrollCtrl">
+            <xmp class="xmpCtrl">
+HTML:
+  <ion-content>
+    <ul class="list">
+      <li class="item"
+        ng-repeat="item in infiniteItems"
+        ng-bind="item">
+      </li>
+    </ul>
+     <ion-infinite-scroll
+       on-infinite="loadMore();"
+       spinner="android"
+       immediate-check="true"
+       distance="5%">
+     </ion-infinite-scroll>
+  </ion-content>
+JS:
+  $scope.infiniteItems = [];
+  var infiniteFlag = 1;
+  $scope.loadMore = function(){
+    $timeout(function(){
+      for(var i=0; i<5; ++i, ++infiniteFlag){
+        $scope.infiniteItems.push(["item", infiniteFlag].join(" "));
+      }
+      $scope.$broadcast("scroll.infiniteScrollComplete");
+    }, 1000);
+  };
+            </xmp>
+        </ion-scroll>
+    </div>
+</ion-view>

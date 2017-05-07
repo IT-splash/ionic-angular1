@@ -1,0 +1,141 @@
+<ion-view view-title="图标 头像 徽章">
+    <ion-content>
+        <ion-list type="card" id="icon">
+            <ion-item class="item-divider">图标 icon</ion-item>
+            <a class="item item-icon-left">
+                <i class="icon ion-email"></i>
+                查看邮件
+            </a>
+            <a class="item item-icon-left item-icon-right">
+                <i class="icon ion-chatbubble-working"></i>
+                刘德华
+                <i class="icon ion-ios-telephone-outline"></i>
+            </a>
+            <a class="item item-icon-left">
+                <i class="icon ion-mic-a"></i>
+                好声音
+                <span class="item-note">
+                  中国
+                </span>
+            </a>
+            <ion-toggle toggle-class="toggle-positive" ng-model="watchCode.icon" class="noBorder marginTo10px">查看代码</ion-toggle>
+            <ion-scroll ng-if="watchCode.icon" direction="xy" class="scrollCtrl">
+                <xmp class="xmpCtrl">
+<ion-item class="item-icon-left item-icon-right">
+    <i class="icon ion-chatbubble-working">
+    </i>
+    刘德华
+    <i class="icon ion-ios-telephone-outline">
+    </i>
+</ion-item>
+                </xmp>
+            </ion-scroll>
+        </ion-list>
+
+        <ion-list type="card" id="avatar">
+            <ion-item class="item-divider">头像 avatar</ion-item>
+            <a class="item item-avatar-left">
+                <img src="./img/shanghai.jpg"/>
+                <h2>上海</h2>
+                <p>东方明珠城市</p>
+            </a>
+            <a class="item item-avatar-left">
+                <img src="./img/jdz.jpg"/>
+                <h2>景德镇</h2>
+                <p>宁谧山水田园</p>
+            </a>
+            <ion-toggle toggle-class="toggle-positive" ng-model="watchCode.avatar" class="noBorder marginTo10px">查看代码</ion-toggle>
+            <ion-scroll ng-if="watchCode.avatar" direction="xy" class="scrollCtrl">
+                <xmp class="xmpCtrl">
+ <ion-item class="item-avatar-left">
+     <img src="./img/shanghai.jpg"/>
+     <h2>上海</h2>
+     <p>东方明珠城市</p>
+ </ion-item>
+                </xmp>
+            </ion-scroll>
+        </ion-list>
+
+        <ion-list type="card" id="badge">
+            <ion-item class="item-divider">徽章 badge</ion-item>
+            <a class="item item-avatar-left">
+                <img src="./img/shanghai.jpg"/>
+                <i class="badge badge-assertive marginTo10px">123</i>
+                <h2>上海</h2>
+                <p>东方明珠</p>
+            </a>
+            <a class="item item-avatar-left">
+                <img src="./img/jdz.jpg"/>
+                <i class="badge badge-royal marginTo10px">321</i>
+                <h2>景德镇</h2>
+                <p>宁谧山水田园</p>
+            </a>
+            <ion-toggle toggle-class="toggle-positive" ng-model="watchCode.badge" class="noBorder marginTo10px">查看代码</ion-toggle>
+            <ion-scroll ng-if="watchCode.badge" direction="xy" class="scrollCtrl">
+                <xmp class="xmpCtrl">
+<ion-item class="item-avatar-left">
+    <img src="./img/shanghai.jpg"/>
+    <i class="badge badge-assertive">321</i>
+    <h2>上海</h2>
+    <p>东方明珠</p>
+</ion-item>
+                </xmp>
+            </ion-scroll>
+        </ion-list>
+
+        <ion-list type="card" id="thumbnail">
+            <ion-item class="item-divider">缩略图 thumbnail</ion-item>
+            <a class="item item-thumbnail-right">
+                <img src="./img/jdz.jpg"/>
+                <h2 class="marginTo20px">景德镇</h2>
+                <p>宁谧山水田园</p>
+            </a>
+            <a class="item item-thumbnail-left">
+                <img src="./img/shanghai.jpg"/>
+                <h2 class="marginTo20px">上海</h2>
+                <p>东方明珠</p>
+            </a>
+            <ion-toggle toggle-class="toggle-positive" ng-model="watchCode.thumbnail" class="noBorder marginTo10px">查看代码</ion-toggle>
+            <ion-scroll ng-if="watchCode.thumbnail" direction="xy" class="scrollCtrl">
+                <xmp class="xmpCtrl">
+<ion-item class="item item-thumbnail-right">
+    <img src="./img/jdz.jpg"/>
+    <h2>景德镇</h2>
+    <p>宁谧山水田园</p>
+</ion-item>
+                </xmp>
+            </ion-scroll>
+        </ion-list>
+
+        <ion-list type="card" id="itemImage">
+            <ion-item class="item-divider">大图 item-image</ion-item>
+            <a class="item item-image">
+                <img src="./img/jdz.jpg"/>
+            </a>
+            <a class="item item-icon-left" href="#">
+                <i class="icon ion-chatbox"></i>
+                Comment
+                <i class="badge badge-calm">99+</i>
+            </a>
+            <ion-toggle toggle-class="toggle-positive" ng-model="watchCode.itemImage" class="noBorder marginTo10px">查看代码</ion-toggle>
+            <ion-scroll ng-if="watchCode.itemImage" direction="xy" class="scrollCtrl">
+                <xmp class="xmpCtrl">
+<ion-item class="item-image">
+    <img src="./img/jdz.jpg" alt="jdz.jpg"/>
+</ion-item>
+                </xmp>
+            </ion-scroll>
+        </ion-list>
+    </ion-content>
+    <div id="guard" ng-show="showGuard">
+        <ul class="">
+            <li class="floatLeft"><a class="label" ng-click="goHash('icon')">图标</a></li>
+            <li class="floatLeft"><a class="label" ng-click="goHash('avatar')">头像</a></li>
+            <li class="floatLeft"><a class="label" ng-click="goHash('badge')">徽章</a></li>
+            <li class="floatLeft"><a class="label" ng-click="goHash('thumbnail')">缩略图</a></li>
+            <li class="floatLeft"><a class="label" ng-click="goHash('itemImage')">大图</a></li>
+            <li class="floatLeft"><a class="label" ng-click="hideGuardFunc()">&gt;&gt;</a></li>
+        </ul>
+    </div>
+    <div id="guard2" ng-show="guardIndex" ng-click="showGuardFunc();">&lt;&lt;</div>
+</ion-view>

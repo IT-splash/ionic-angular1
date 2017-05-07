@@ -1,0 +1,64 @@
+<ion-view view-title="ionSlideBox">
+    <ion-content>
+        <div class="modalCtrl">
+            <div class="marginBottom">
+                <h4><strong>幻灯片：</strong>ion-slide-box</h4>
+                <xmp class="xmpCtrl2">
+<ion-slide-box>
+    <ion-slide>...</ion-slide>
+    <ion-slide>...</ion-slide>
+    <ion-slide>...</ion-slide>
+</ion-slide-box>
+                </xmp>
+                <p><strong>左右滑动切换视图</strong></p>
+            </div>
+            <br/><br/>
+            <ion-toggle toggle-class="toggle-positive" ng-model="slideShow" class="noBorder">查看效果</ion-toggle>
+            <div class="marginBottom" ng-if="slideShow" ng-mouseover="showButtonFunc();" ng-mouseleave="hideButtonFunc();">
+                <ion-slide-box does-continue="true" auto-play="true"
+                               slide-interval="2000" show-pager="true"
+                        active-slide="index" pager-click="showPager(index)">
+                    <ion-slide>
+                        <img src="img/shanghai.jpg" class="sliderPic">
+                    </ion-slide>
+                    <ion-slide>
+                        <img src="img/jdz.jpg" class="sliderPic">
+                    </ion-slide>
+                    <ion-slide>
+                        <img src="img/china.jpg" class="sliderPic">
+                    </ion-slide>
+                </ion-slide-box>
+                <div ng-show="showButton">
+                    <button class="button button-light button-icon ion-chevron-left"
+                            id="btnLeft" ng-click="goPrevious()"></button>
+                    <button class="button button-light button-icon ion-chevron-right"
+                            id="btnRight" ng-click="goNext()"></button>
+                </div>
+            </div>
+            <br/><br/>
+        </div>
+
+        <div class="modalCtrl">
+            <div class="marginBottom">
+                <h4><strong>ion-slide-box 属性</strong></h4>
+                <p class="marginLeft10px"><strong>1）是否循环</strong> does-continue 值为true | false 默认为false</p>
+                <p class="marginLeft10px"><strong>2）自动播放</strong> auto-play 值为true | false 默认为false</p>
+                <p class="marginLeft10px"><strong>3）自动播放间隔</strong> slide-interval 值为纯数字，单位为ms</p>
+                <p class="marginLeft10px"><strong>4）显示分页器</strong> show-pager 值为true | false 默认为false</p>
+            </div>
+            <br/><br/>
+        </div>
+
+        <div class="modalCtrl">
+            <div class="marginBottom">
+                <h4><strong>ion-slide-box 事件</strong></h4>
+                <p class="marginLeft10px"><strong>1）pager-click</strong> 分页器点击事件</p>
+                <p class="marginLeft30px"><strong>传入被点击的分页按钮对应的幻灯页序号</strong></p>
+                <p class="marginLeft10px"><strong>2）active-slide</strong> 当前幻灯片索引</p>
+                <p class="marginLeft30px"><strong>可绑定为作用域内的变量，当幻灯片切换时，
+                    这个变量同步的反应当前的幻灯页索引号 </strong></p>
+            </div>
+            <br/><br/>
+        </div>
+    </ion-content>
+</ion-view>

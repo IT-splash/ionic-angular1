@@ -1,0 +1,222 @@
+<ion-view view-title="{{commonTitle}}">
+    <ion-content >
+        <div class="modalCtrl marginBottom300px" id="checkbox">
+            <h4><strong>ion-checkbox</strong></h4>
+            <div class="padding-bottom">
+                <ion-list>
+                    <ion-item>
+                        <span><strong>你的选择是：</strong></span>
+                        <div class="marginLeft20px marginTo10px">
+                            <span class="beforeCheck" ng-class="{'afterCheck': checkboxItems[0].value}">Html5</span>
+                            <span class="beforeCheck" ng-class="{'afterCheck': checkboxItems[1].value}">C/C++</span>
+                            <span class="beforeCheck" ng-class="{'afterCheck': checkboxItems[2].value}">Java</span>
+                            <span class="beforeCheck" ng-class="{'afterCheck': checkboxItems[3].value}">Php</span>
+                        </div>
+                    </ion-item>
+                    <ion-item>
+                        <ion-checkbox ng-repeat="item in checkboxItems"
+                                ng-model="item.value">
+                            {{item.name}}
+                        </ion-checkbox>
+                    </ion-item>
+                </ion-list>
+            </div>
+            <ion-toggle toggle-class="toggle-positive" ng-model="watchCode.checkbox" class="noBorder">查看代码</ion-toggle>
+            <ion-scroll ng-if="watchCode.checkbox" direction="xy" class="scrollCtrl">
+                <xmp class="xmpCtrl">
+<ion-checkbox ng-model="value"
+    class="checkbox-positive">
+    There are what you want
+</ion-checkbox>
+                </xmp>
+            </ion-scroll>
+        </div>
+
+        <div class="modalCtrl marginBottom300px" id="radio">
+            <h4><strong>ion-radio</strong></h4>
+            <div class="padding-bottom">
+                <ion-list>
+                    <ion-item>
+                        <span><strong>你的选择是：</strong></span>
+                        <div class="marginLeft20px marginTo10px marginBottom10px">
+                            <span class="radioResult" ng-cloak>{{radioResult}}</span>
+                        </div>
+                        <ion-radio ng-model="radioResult" ng-value="'RedHat'">RedHat</ion-radio>
+                        <ion-radio ng-model="radioResult" ng-value="'Win7'">Win7</ion-radio>
+                        <ion-radio ng-model="radioResult" ng-value="'Ubuntu'">Ubuntu</ion-radio>
+                        <ion-radio ng-model="radioResult" ng-value="'MacOS'">MacOS</ion-radio>
+                    </ion-item>
+                </ion-list>
+            </div>
+            <ion-toggle toggle-class="toggle-positive" ng-model="watchCode.radio" class="noBorder">查看代码</ion-toggle>
+            <ion-scroll ng-if="watchCode.radio" direction="xy" class="scrollCtrl">
+                <xmp class="xmpCtrl">
+<ion-radio ng-model="result"
+   ng-value="'RedHat'">
+    RedHat
+</ion-radio>
+                </xmp>
+            </ion-scroll>
+        </div>
+
+        <div class="modalCtrl marginBottom300px" id="toggle">
+            <h4><strong>ion-toggle</strong></h4>
+            <div class="padding-bottom">
+                <ion-list>
+                    <ion-item>
+                        <ion-toggle ng-model="toggleResult" toggle-class="toggle-assertive">上海</ion-toggle>
+                        <img ng-if="toggleResult" src="./img/shanghai.jpg" style="width:100%;"/>
+                    </ion-item>
+                    <ion-item>
+                        <ion-toggle ng-model="toggleResult" toggle-class="toggle-calm">景德镇</ion-toggle>
+                        <img ng-if="toggleResult" src="./img/jdz.jpg" style="width:100%;"/>
+                    </ion-item>
+                    <ion-item>
+                        <ion-toggle ng-model="toggleResult" toggle-class="toggle-royal">瓷器</ion-toggle>
+                        <img ng-if="toggleResult" src="./img/china.jpg" style="width:100%;"/>
+                    </ion-item>
+                </ion-list>
+            </div>
+            <ion-toggle toggle-class="toggle-positive" ng-model="watchCode.toggle" class="noBorder">查看代码</ion-toggle>
+            <ion-scroll ng-if="watchCode.toggle" direction="xy" class="scrollCtrl">
+                <xmp class="xmpCtrl">
+<ion-toggle ng-model="toggleResult"
+  toggle-class="toggle-royal">
+    上海
+</ion-toggle>
+                </xmp>
+            </ion-scroll>
+        </div>
+
+        <div class="modalCtrl marginBottom300px" id="range">
+            <h4><strong>range</strong></h4>
+            <div class="padding-bottom">
+                <ion-list>
+                    <ion-item class="item-divider" ng-click="rangeChange()">图标、进度条</ion-item>
+                    <ion-item class="range">
+                        <i class="icon ion-volume-low"></i>
+                        <input type="range" name="volume1">
+                        <i class="icon ion-volume-high"></i>
+                    </ion-item>
+                    <ion-item class="range range-positive">
+                        <i class="icon ion-ios-sunny-outline"></i>
+                        <input type="range" name="bright" min="0" max="100" value="{{rangeValue1}}">
+                        <i class="icon ion-ios-sunny"></i>
+                    </ion-item>
+                    <ion-item class="range range-assertive">
+                        <i class="icon ion-volume-low"></i>
+                        <input type="range" name="volume2" min="0" max="100" value="{{rangeValue2}}">
+                        <i class="icon ion-volume-high"></i>
+                    </ion-item>
+                </ion-list>
+            </div>
+            <ion-toggle toggle-class="toggle-positive" ng-model="watchCode.range" class="noBorder">查看代码</ion-toggle>
+            <ion-scroll ng-if="watchCode.range" direction="xy" class="scrollCtrl">
+                <xmp class="xmpCtrl">
+<div class="range range-positive">
+   <i class="icon ion-volume-low"></i>
+    <input type="range" name="volume"
+        min="0" max="100" value="60"/>
+    <i class="icon ion-volume-high"></i>
+</div>
+                </xmp>
+            </ion-scroll>
+        </div>
+
+        <div class="modalCtrl marginBottom300px" id="select">
+            <h4><strong>select</strong></h4>
+            <div class="padding-bottom">
+                <ion-list>
+                    <label class="item item-input item-select">
+                        <label class="input-label">城市</label>
+                        <select>
+                            <option value="bj">北京</option>
+                            <option value="sh" selected>上海</option>
+                            <option value="gz">广州</option>
+                        </select>
+                    </label>
+                    <label class="item item-input item-select">
+                        <label class="input-label">爱好</label>
+                        <select>
+                            <option value="ball">球类</option>
+                            <option value="chess" selected>棋类</option>
+                            <option value="swimming">游泳</option>
+                        </select>
+                    </label>
+                    <label class="item item-input item-select">
+                        <label class="input-label">语言</label>
+                        <select>
+                            <option value="java">Java</option>
+                            <option value="c">C++</option>
+                            <option value="html" selected>Html5</option>
+                        </select>
+                    </label>
+                </ion-list>
+            </div>
+            <ion-toggle toggle-class="toggle-positive" ng-model="watchCode.selectCode" class="noBorder">查看代码</ion-toggle>
+            <ion-scroll ng-if="watchCode.selectCode" direction="xy" class="scrollCtrl">
+                <xmp class="xmpCtrl">
+<label class="item item-input item-select">
+  <label class="input-label">语言</label>
+    <select>
+      <option value="java">Java</option>
+      <option value="c">C++</option>
+      <option value="html" selected>Html5</option>
+    </select>
+</label>
+                </xmp>
+            </ion-scroll>
+        </div>
+
+        <div class="modalCtrl" id="spinner">
+            <h4><strong>ion-spinner</strong></h4>
+            <div class="padding-bottom">
+                <ion-list>
+                    <ion-item>
+                        <ion-spinner></ion-spinner>
+                        <h2 class="describeCtrl">默认</h2>
+                    </ion-item>
+                    <ion-item>
+                        <ion-spinner icon="android"></ion-spinner>
+                        <h2 class="describeCtrl">android</h2>
+                    </ion-item>
+                    <ion-item>
+                        <ion-spinner icon="ios" class="spinner-assertive"></ion-spinner>
+                        <h2 class="describeCtrl">ios</h2>
+                    </ion-item>
+                    <ion-item>
+                        <ion-spinner icon="ripple" class="spinner-royal"></ion-spinner>
+                        <h2 class="describeCtrl">ripple</h2>
+                    </ion-item>
+                    <ion-item>
+                        <ion-spinner icon="spiral" class="spinner-balanced"></ion-spinner>
+                        <h2 class="describeCtrl">spiral</h2>
+                    </ion-item>
+                    <ion-item>
+                        <ion-spinner icon="crescent"></ion-spinner>
+                        <h2 class="describeCtrl">crescent</h2>
+                    </ion-item>
+                    <ion-item>
+                        <ion-spinner icon="bubbles" class="spinner-calm"></ion-spinner>
+                        <h2 class="describeCtrl">bubbles</h2>
+                    </ion-item>
+                    <ion-item>
+                        <ion-spinner icon="lines"></ion-spinner>
+                        <h2 class="describeCtrl">lines</h2>
+                    </ion-item>
+                </ion-list>
+            </div>
+            <ion-toggle toggle-class="toggle-positive" ng-model="watchCode.spinner" class="noBorder">查看代码</ion-toggle>
+            <ion-scroll ng-if="watchCode.spinner" direction="xy" class="scrollCtrl">
+                <xmp class="xmpCtrl">
+<ion-spinner
+    icon="android">
+</ion-spinner>
+<ion-spinner
+    icon="lines">
+</ion-spinner>
+                </xmp>
+            </ion-scroll>
+        </div>
+    </ion-content>
+</ion-view>

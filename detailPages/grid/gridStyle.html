@@ -1,0 +1,97 @@
+<ion-view view-title="grid样式">
+    <ion-content>
+        <div class="modalCtrl">
+            <h5><strong>均分列宽</strong></h5>
+            <div class="row center">
+                <div class="col border1px">.col</div>
+                <div class="col border1px">.col</div>
+                <div class="col border1px">.col</div>
+                <div class="col border1px">.col</div>
+                <div class="col border1px">.col</div>
+            </div>
+            <div class="row center marginTo10px">
+                <div class="col border1px">.col</div>
+                <div class="col border1px">.col</div>
+                <div class="col border1px">.col</div>
+                <div class="col border1px">.col</div>
+                <div class="col border1px">.col</div>
+                <div class="col border1px">.col</div>
+                <div class="col border1px">.col</div>
+            </div>
+            <ion-toggle toggle-class="toggle-positive" ng-model="watchCode.same" class="noBorder">查看代码</ion-toggle>
+            <ion-scroll ng-if="watchCode.same" direction="xy" class="scrollCtrl">
+                <xmp class="xmpCtrl">
+<div class="row">
+    <div class="col">.col</div>
+    <div class="col">.col</div>
+    ...
+</div>
+                </xmp>
+            </ion-scroll>
+        </div>
+        <div class="modalCtrl">
+            <h5><strong>不同列宽</strong></h5>
+            <div class="row center">
+                <div class="col col-25" style="background-color: #6495ED">.col</div>
+                <div class="col col-50" style="background-color: #69717d">.col</div>
+                <div class="col col-25" style="background-color: #6b46e5">.col</div>
+            </div>
+            <div class="row center">
+                <div class="col col-75" style="background-color: #6b46e5">.col</div>
+                <div class="col col-25" style="background-color: #6495ED">.col</div>
+            </div>
+            <div class="row center">
+                <div class="col col-67" style="background-color: #e42012">.col</div>
+                <div class="col col-33" style="background-color: #28a54c">.col</div>
+            </div>
+            <div class="row center">
+
+                <div class="col col-80" style="background-color: #6495ED">.col</div>
+                <div class="col col-20" style="background-color: #6b46e5">.col</div>
+            </div>
+            <ion-toggle toggle-class="toggle-positive" ng-model="watchCode.different" class="noBorder">查看代码</ion-toggle>
+            <ion-scroll ng-if="watchCode.different" direction="xy" class="scrollCtrl">
+                <xmp class="xmpCtrl">
+
+    <div class="col col-10">.col</div>
+    <div class="col col-20">.col</div>
+    <div class="col col-33">.col</div>
+    <div class="col col-50">.col</div>
+    <div class="col col-67">.col</div>
+    <div class="col col-75">.col</div>
+    <div class="col col-75">.col</div>
+    <div class="col col-80">.col</div>
+    <div class="col col-90">.col</div>
+
+                </xmp>
+            </ion-scroll>
+        </div>
+        <div class="modalCtrl">
+            <h5><strong>列偏移</strong></h5>
+            <div class="row center">
+                <div class="col col-25" style="background-color: #6495ED">.col</div>
+                <div class="col col-offset-50 col-25" style="background-color: #6b46e5">.col</div>
+            </div>
+            <div class="row center">
+                <div class="col col-offset-67 col-33" style="background-color: #6495ED">.col</div>
+            </div>
+            <div class="row center">
+                <div class="col col-offset-10 col-90" style="background-color: #28a54c">.col</div>
+            </div>
+            <ion-toggle toggle-class="toggle-positive" ng-model="watchCode.offset" class="noBorder">查看代码</ion-toggle>
+            <ion-scroll ng-if="watchCode.offset" direction="xy" class="scrollCtrl">
+                <xmp class="xmpCtrl">
+<div class="col col-offset-10 col-90">.col</div>
+<div class="col col-offset-20 col-50">.col</div>
+<div class="col col-offset-25 col-50">.col</div>
+<div class="col col-offset-33 col-50">.col</div>
+<div class="col col-offset-50 col-50">.col</div>
+<div class="col col-offset-67 col-33">.col</div>
+<div class="col col-offset-75 col-25">.col</div>
+<div class="col col-offset-80 col-20">.col</div>
+<div class="col col-offset-90 col-10">.col</div>
+                </xmp>
+            </ion-scroll>
+        </div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,74 @@
+<ion-view view-title="常规列表项">
+    <ion-nav-buttons side="right">
+        <button class="button button-small button-icon icon ion-ios-minus-outline"
+                ng-click="deleteShowF();"></button>
+    </ion-nav-buttons>
+    <ion-content>
+        <ion-header-bar>
+            <button class="button button-small button-dark button-outline pull-right"
+                    ng-click="reorderShowF();">排序</button>
+        </ion-header-bar>
+        <br><br>
+        <ion-list show-delete="deleteShow" show-reorder="reorderShow">
+            <a class="item item-divider item-button-right bgColor" ng-click="showDirection()">
+                删除 排序 滑动显示内置按钮项
+                <button class="button button-small button-clear button-icon ion-ios-flag"></button>
+            </a>
+            <ion-item ng-repeat="item in items" class="item-remove-animate"
+                      ng-class="{'afterClick': colorSet[$index]}"
+                    ng-click="closeOptionButton();">
+                <ion-delete-button class="ion-minus-circled"
+                                   ng-click="deleteItem($index);"
+                        ng-show="true">
+                </ion-delete-button>
+                <ion-reorder-button class="ion-navicon"
+                                    on-reorder="reorderItem(item, $fromIndex, $toIndex)">
+                </ion-reorder-button>
+                <ion-option-button class="icon ion-edit" ng-click="editClick($index)"></ion-option-button>
+                <ion-option-button class="icon ion-share"></ion-option-button>
+                {{item}}
+            </ion-item>
+        </ion-list>
+    </ion-content>
+    <cover-div ng-show="coverDivShow" ng-click="coverShowClick();"></cover-div>
+    <page-canvas ng-show="pageCanvasShow">
+        <div class="modalCtrl">
+            <h4><strong>标签使用</strong></h4>
+            <div class="padding-bottom padding-top bgColorWhite">
+                <p>● 删除按钮</p>
+                <p class="marginLeft10px"><strong>ion-delete-button</strong></p>
+                <p>● 排序按钮</p>
+                <p class="marginLeft10px"><strong>ion-reorder-button</strong></p>
+                <p>● 内置项按钮</p>
+                <p class="marginLeft10px"><strong>ion-option-button</strong></p>
+            </div>
+            <div class="padding-bottom padding-top marginTo10px bgColorWhite">
+                <p><strong>上述标签必须放在 ion-item 标签里面</strong></p>
+                <p><strong>ion-delete-button、ion-reorder-button的显示由 ion-list 属性 show-delete、show-reorder 控制</strong></p>
+                <p><strong>ion-option-button直接在通过该标签内的 class 来设置图标，item向左滑动时显示该按钮</strong></p>
+            </div>
+            <ion-toggle toggle-class="toggle-positive" ng-model="watchCode.routineList" class="noBorder">查看代码</ion-toggle>
+            <ion-scroll ng-if="watchCode.routineList" direction="xy" class="scrollCtrl">
+                <xmp class="xmpCtrl">
+<ion-list show-delete="deleteShow"
+    show-reorder="reorderShow">
+    <ion-item>
+       <ion-delete-button class="ion-minus-circled"
+          ng-click="deleteItem($index);"
+          ng-show="true">
+       </ion-delete-button>
+       <ion-reorder-button class="ion-navicon"
+          on-reorder="reorderItem(item, $fromIndex, $toIndex)">
+       </ion-reorder-button>
+       <ion-option-button class="icon ion-edit">
+       </ion-option-button>
+       <ion-option-button class="icon ion-share">
+       </ion-option-button>
+        上海
+    </ion-item>
+</ion-list>
+                </xmp>
+            </ion-scroll>
+        </div>
+    </page-canvas>
+</ion-view>

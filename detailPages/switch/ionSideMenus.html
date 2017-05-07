@@ -1,0 +1,68 @@
+<ion-view view-title="ionSideMenus">
+    <ion-content>
+        <div class="modalCtrl">
+            <div class="marginBottom">
+                <h4><strong>侧边栏菜单：</strong>ion-side-menus</h4>
+                <xmp class="xmpCtrl2">
+<ion-side-menus>
+    <ion-side-menu-content>
+        ...
+    </ion-side-menu-content>
+    <ion-side-menu side="left">
+        ...
+    </ion-side-menu>
+    <ion-side-menu side="right">
+        ...
+    </ion-side-menu>
+</ion-side-menus>
+                </xmp>
+                <p><strong>默认情况下</strong> 侧边栏菜单将只显示ion-side-menu-content容器的内容。
+                    向左 滑动时，将显示右边栏ion-side-menu容器的内容，
+                    向右滑动时，将显示左边栏 ion-side-menu容器的内容。</p>
+            </div>
+            <br/><br/>
+        </div>
+        <div class="modalCtrl">
+            <div class="marginBottom">
+                <h4><strong>侧边栏切换</strong></h4>
+                <p class="marginLeft10px"><strong>任意标签添加 menu-toggle 属性 值为 right | left，打开或关闭侧边栏</strong></p>
+                <p class="marginLeft10px"><strong>任意标签添加 menu-close 属性 不设值，关闭侧边栏</strong></p>
+                    <ion-list>
+                        <ion-item class="item-icon-left item-icon-right" align="center">
+                            <i class="icon ion-arrow-left-a" menu-toggle="left"></i>
+                            <button class="button button-clear button-small" menu-close="">menu-close</button>
+                            <i class="icon ion-arrow-right-a" menu-toggle="right"></i>
+                        </ion-item>
+                    </ion-list>
+                <p class="marginLeft10px"><strong></strong>
+            </div>
+            <br/><br/>
+        </div>
+
+        <div class="modalCtrl">
+            <div class="marginBottom">
+                <h4><strong>ion-side-menu-content</strong> 内容主显示区</h4>
+                <p class="marginLeft10px"><strong>常用属性</strong></p>
+                <p class="marginLeft20px"><strong>1）drag-content</strong>是否允许拖动打开侧边栏，值为 true | false</p>
+                <p class="marginLeft20px"><strong>2）edge-drag-threshold</strong>是否启用拖动边距检测，值为 true | false | 数值
+                    <strong>如果设置为一个正数，那么只有当拖动发生在距离边界小于这个数值的情况下，
+                        才触发侧栏显示。当设置为true时，默认25px。false为任意位置拖动</strong></p>
+            </div>
+            <br/><br/>
+        </div>
+
+        <div class="modalCtrl">
+        <div class="marginBottom">
+            <h4><strong>ion-side-menu</strong> 侧边栏显示区</h4>
+            <p class="marginLeft10px"><strong>常用属性</strong></p>
+            <p class="marginLeft20px"><strong>1）side</strong>指定内容区在左或右，默认为左</p>
+            <p class="marginLeft20px"><strong>2）width</strong>设置宽度，默认为275px</p>
+            <p class="marginLeft20px"><strong>3）is-enabled</strong>设置边栏是否可用，true | false 默认true</p>
+            <p class="marginLeft20px"><strong>4）expose-aside-when</strong>侧边栏自动显示条件
+                <strong>expose-aside-when="(min-width: 500px;)"</strong>即屏幕宽度大于500px时，显示侧边栏。
+                <strong>若使用large常量 表示 最大为768px</strong></p>
+        </div>
+        <br/><br/>
+    </div>
+    </ion-content>
+</ion-view>
